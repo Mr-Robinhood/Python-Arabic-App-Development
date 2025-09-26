@@ -88,7 +88,7 @@ def stat_card(icon: str, value: str, label: str, icon_bg_color: str) -> rx.Compo
 def section_header(title: str, link_text: str = "عرض الكل") -> rx.Component:
     return rx.el.div(
         rx.el.h3(title, class_name="text-xl font-bold text-gray-800"),
-        rx.el.a(link_text, href="#", class_name="text-purple-600 font-semibold"),
+        rx.el.span(link_text, class_name="text-purple-600 font-semibold"),
         class_name="flex justify-between items-center mb-4",
     )
 
