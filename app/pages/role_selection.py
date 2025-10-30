@@ -1,5 +1,6 @@
 import reflex as rx
 from app.states.login_state import LoginState
+from app.states.registration_state import RegistrationState
 
 
 def role_card(
@@ -13,7 +14,7 @@ def role_card(
         rx.el.div(
             rx.el.div(
                 rx.icon(tag=icon, class_name="h-7 w-7"),
-                class_name=f"p-3 rounded-lg {icon_bg_color} mr-4",
+                class_name=f"p-3 rounded-lg {icon_bg_color} ml-4",
             ),
             rx.el.div(
                 rx.el.h3(title, class_name="font-bold text-lg text-gray-800"),
@@ -66,9 +67,10 @@ def role_selection_page() -> rx.Component:
             rx.el.p(
                 "ليس لديك حساب؟ ",
                 rx.el.a(
-                    "تواصل مع الإدارة",
-                    href="#",
-                    class_name="font-semibold text-gray-700 hover:underline",
+                    "إنشاء حساب جديد",
+                    href="/register",
+                    on_click=lambda: RegistrationState.set_registration_type("student"),
+                    class_name="font-semibold text-purple-600 hover:underline",
                 ),
                 class_name="text-center mt-12 text-gray-500",
             ),

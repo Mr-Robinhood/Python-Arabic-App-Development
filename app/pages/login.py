@@ -8,7 +8,7 @@ def login_page() -> rx.Component:
         rx.el.button(
             rx.icon(tag="arrow-right", class_name="h-5 w-5"),
             on_click=LoginState.go_back_to_selection,
-            class_name="absolute top-8 left-8 text-gray-500 hover:bg-gray-100 p-2 rounded-full transition",
+            class_name="absolute top-8 right-8 text-gray-500 hover:bg-gray-100 p-2 rounded-full transition",
         ),
         rx.match(
             LoginState.login_type,

@@ -1,6 +1,7 @@
 import reflex as rx
 from app.pages.role_selection import role_selection_page
 from app.pages.login import login_page
+from app.pages.register import register_page
 from app.pages.admin_dashboard import admin_dashboard_page
 from app.pages.professor_dashboard import professor_dashboard_page
 from app.pages.student_dashboard import student_dashboard_page
@@ -28,6 +29,11 @@ def login() -> rx.Component:
     return rx.el.main(login_page(), dir="rtl", class_name="font-['Tajawal']")
 
 
+@rx.page(route="/register", title="Register")
+def register() -> rx.Component:
+    return rx.el.main(register_page(), dir="rtl", class_name="font-['Tajawal']")
+
+
 @rx.page(route="/admin/dashboard", title="Admin Dashboard")
 def admin_dashboard() -> rx.Component:
     return rx.el.main(admin_dashboard_page(), dir="rtl", class_name="font-['Tajawal']")
@@ -49,6 +55,7 @@ def student_dashboard() -> rx.Component:
 
 app.add_page(role_selection)
 app.add_page(login)
+app.add_page(register)
 app.add_page(admin_dashboard)
 app.add_page(professor_dashboard)
 app.add_page(student_dashboard)
